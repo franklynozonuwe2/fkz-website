@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #fff0f3, #f8dce6, #ffe8ee);
+  font-family: 'DM Sans', sans-serif;
+  color: #704452;
+}
+
+.love-card {
+  width: 100%;
+  max-width: 580px;
+  padding: 55px 35px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(151, 71, 101, 0.15);
+  position: relative;
+  z-index: 2;
+  animation: appear 1.2s ease;
+}
+
+.top-heart {
+  color: #d94c79;
+  font-size: 55px;
+  animation: heartbeat 1.5s infinite;
+}
+
+.eyebrow {
+  margin-top: 15px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #b47b8c;
+}
+
+h1 {
+  margin-top: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 9vw, 65px);
+  color: #a83f65;
+}
+
+.divider {
+  margin: 20px 0;
+  color: #d47a98;
+  letter-spacing: 8px;
+}
+
+.intro {
+  max-width: 380px;
+  margin: 0 auto 28px;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+button {
+  padding: 16px 30px;
+  background: linear-gradient(135deg, #c94f78, #a83f65);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(168, 63, 101, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(168, 63, 101, 0.35);
+}
+
+button:focus-visible {
+  outline: 3px solid #a83f65;
+  outline-offset: 5px;
+}
+
+#message {
+  margin-top: 35px;
+  padding: 25px 10px;
+  border-top: 1px solid #f2d5df;
+  animation: reveal 1s ease;
+}
+
+#message h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #b83e69;
+  margin-bottom: 20px;
+}
+
+#message p {
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.forever {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #a83f65;
+}
+
+.big-heart {
+  font-size: 65px;
+  color: #d94c79;
+  margin-top: 15px;
+  animation: heartbeat 1.2s infinite;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  margin-top: 35px;
+  font-size: 12px;
+  color: #b47b8c;
+  letter-spacing: 1px;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: rgba(203, 75, 119, 0.5);
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .love-card {
+    padding: 40px 22px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2px;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
